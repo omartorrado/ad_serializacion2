@@ -56,14 +56,12 @@ public class Serializacion2 {
             Product tempProduct=(Product) ois.readObject();
             while(tempProduct!=null){
                 System.out.println(tempProduct.toString());
-                tempProduct=(Product) ois.readObject();
+                tempProduct=(Product) ois.readObject();                
             }
             ois.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Serializacion2.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Serializacion2.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(Serializacion2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
